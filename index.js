@@ -71,7 +71,6 @@ function printOnTheScrean(data,dis){
 }
 function operationByPriority(values){
   let op = ['!','%','÷','×','-','+'];
-  let functions = ['sin(','cos(','tan(','log(','ln(','√('];
   let i = 0;
   let f = 0;
   let index = 0;
@@ -81,20 +80,6 @@ function operationByPriority(values){
         if(/\d+!/.test(values[c])){
           values[c] = factorial(parseFloat(values[c]));
           index++;
-        }
-      }
-      // check functions
-      while(f < functions.length){
-        if(values.indexOf(functions[f]) > -1){
-          let t = values.indexOf(functions[f]);
-          values[t] = fOpearation(functions[f],values[t+1]);
-          values[t+1] = null;
-          values[t+2] = null;
-          values = values.filter(function(v){
-            return v != null;
-          });
-        }else {
-          f++;
         }
       }
       // check Brackets
@@ -188,11 +173,4 @@ function division(n1,n2){
 }
 function percentage(n1,n2){
   return n1*(n2/100);
-}
-
-function factorial(num){
-  if(num == 0)
-    return 1;
-  else if(num > 0)
-    return num * factorial(num-1);
 }
