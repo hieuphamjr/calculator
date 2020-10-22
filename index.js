@@ -15,7 +15,6 @@ function eventHandler(){
   key.addEventListener('click',display);
 }
 function keyDisplay(){
-  //console.log(String.fromCharCode(event.keyCode));
   if((event.keyCode >= 48 && event.keyCode <= 57)){
     printOnTheScrean(String.fromCharCode(event.keyCode),dis);
   }
@@ -132,7 +131,7 @@ function operation(n1,n2,op){
       result = multiplication(n1,n2);
       break;
     case "%":
-      result = percentage(n1,n2);
+      result = percentage(n1);
   }
   return result;
 
@@ -171,6 +170,6 @@ function subtruction(n1,n2){
 function division(n1,n2){
   return n1/n2;
 }
-function percentage(n1,n2){
-  return n1*(n2/100);
+function percentage(n1){
+  return n1/100;
 }
