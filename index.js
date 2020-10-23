@@ -37,11 +37,11 @@ function checkEquals(data,dis){
 function printOnTheScrean(data,dis){
   if(data.textContent == "AC"){
       if(dis.textContent[dis.textContent.length-1]==" ")
-        dis.textContent = dis.textContent.substring(0,dis.textContent.length-3);
+        dis.textContent = parseFloat(a.toPrecision(10).toString());
       else if(equals)
         dis.textContent = "0";
       else {
-        dis.textContent = dis.textContent.substring(0,dis.textContent.length-1);
+        dis.textContent = parseFloat(a.toPrecision(10).toString());
       }
   }
   else if(data.className == "function"){
